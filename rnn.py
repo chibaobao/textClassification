@@ -51,9 +51,9 @@ if __name__ == "__main__":
     net = BiRNN(vocab, embed_size, num_hiddens, num_layers) #实例化一个双向RNN
     net.initialize(init.Xavier(), ctx=ctx) #对模型进行初始化
     ## 4.1 加载词向量预训练集
-    print("加载与训练的词向量，若电脑没有预训练数据集将会自动从网上下载")
+    print("加载预训练的词向量，若电脑没有预训练数据集将会自动从网上下载")
     glove_embedding = text.embedding.create(
-        'glove', pretrained_file_name='glove.6B.100d.txt', vocabulary=vocab)
+        'glove', pretrained_file_name='glove.6B.100d.txt', vocabulary=vocab) #其中的100指的是词向量长度为100
     print("加载与训练的词向量 ok")
     ## 4.2 初试化模型参数
     net.embedding.weight.set_data(glove_embedding.idx_to_vec)
@@ -70,5 +70,5 @@ if __name__ == "__main__":
     plt.legend("loss")  # 可省略，图像上的字（可认为标题）设置loss
     plt.show()  # 显示图像
     # 6. 调用predict进行测试
-    test_str = "this movie is so great"  # ,注意测试语句词数不能
-    print(predict(net, vocab, test_str))
+    test_str = "this movie is so great" # 测试一条语句看看是
+    print("测试语句判断结果是：",predict(net, vocab, test_str))

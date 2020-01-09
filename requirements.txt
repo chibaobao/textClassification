@@ -1,2 +1,4 @@
 mxnet
 matplotlib
+IPython
+mxnet-cu100

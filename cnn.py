@@ -79,5 +79,5 @@ if __name__ == "__main__":
     plt.legend("loss") #可省略，图像上的字（可认为标题）设置loss
     plt.show() #显示图像
     # 6. 调用predict进行测试
-    test_str = "this movie is so great" #,注意测试语句词数不能
-    print(predict(net,vocab,test_str))
+    test_str = "this movie is so great" #,注意测试语句词数不能小于kernel_sizes的最大值
+    print("测试语句判断结果是：",predict(net, vocab, test_str))

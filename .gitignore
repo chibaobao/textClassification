@@ -2,3 +2,4 @@ venv/
 db/
 indexPath/
 .idea/
+data/
