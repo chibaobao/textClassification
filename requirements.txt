@@ -1,4 +1,4 @@
 mxnet
 matplotlib
 IPython
-mxnet-cu100
+#mxnet-cu100
